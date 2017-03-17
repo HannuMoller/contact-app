@@ -1,0 +1,86 @@
+/*
+
+* {
+    border: 1px dotted black;
+}
+
+*/
+
+label {
+    float: left;
+    width: 120px;
+}
+
+input {
+    width: 190px;
+    background-color: whitesmoke;
+}
+
+.submit {
+    clear: both;
+}
+
+h3 {
+    align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+#new_contact {
+    width: 315px;
+    background-color: lavender;
+    margin: 20px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: 2px solid darkgrey;
+    font-family: Arial;
+}
+
+#all_contacts {
+    background-color: lavender;
+    width: 800px;
+    margin: 20px;
+    padding: 0px 20px 20px 20px;
+    border-radius: 20px;
+    border: 2px solid darkgrey;
+    font-family: Arial;
+}
+
+#save {
+    margin: 20px 120px;
+    width: 100px;
+}
+
+#col1, #col2 {
+    width: 150px;
+}
+
+#col3 {
+    width: 100px;
+}
+
+#col4 {
+    width: 390px;
+}
+
+#col5 {
+    width: 130px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    width: 100%;
+}
+
+#hdr {
+    background-color: whitesmoke;
+    font-style: italic;
+    font-weight: bold;
+}

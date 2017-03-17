@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Contact Management System</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/contact.js" type="text/javascript"></script>
+
+    </head>
+<body onload="loadContactsFromLocalStorage()">
+<div id="new_contact">
+    <h3 id="formheader">New Contact</h3>
+    <hr/>
+    <div>
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name">
+    </div>
+    <div>
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name">
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone">
+    </div>
+    <div>
+        <label for="address">Street address</label>
+        <input type="text" id="address">
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input type="text" id="city">
+    </div>
+    <div class="submit">
+        <button id="save" onclick="saveContact()">Add Contact</button>
+    </div>
+    <input type="hidden" id="index" value="-1"></input>
+</div>
+
+<div id="all_contacts">
+<h3>Contacts</h3>
+<hr/>
+<table class="table">
+    <thead>
+        <tr id="hdr"><td id="col1">First name</td><td id="col2">Last name</td><td id="col3">Phone</td><td id="col4">Address</td><td id="col5">Actions</td> </tr>
+    </thead>
+    <tbody id="contacts">
+    </tbody>
+</table>
+</div>
+
+</body>
+
+</html>
