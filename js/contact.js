@@ -20,15 +20,13 @@ function saveContact() {
     var index = $('#index').val();
     if (index < 0) {
         contacts.push(contact);
-        index = contacts.length-1;
-        localStorage.contactCount = contacts.length;
     } else {
         contacts[index] = contact;
         $('#index').val(-1);
         $('#save').html('Add Contact');
         $('#formheader').html('New Contact');
     }
-    saveContactToLocalStorage(index);
+    saveContactsToLocalStorage();
 
     showContacts();
 }
@@ -79,29 +77,18 @@ function deleteContact(ind) {
 
     if (confirm('Ok to remove '+contact.firstName+' '+contact.lastName+' ?')) {
         contacts.splice(ind, 1);
-        localStorage.contactCount = contacts.length;
-        while (ind < contacts.length) {
-            saveContactToLocalStorage(ind);
-            ind++;
-        }
-        localStorage.removeItem('contact#'+ind);
+        saveContactsToLocalStorage();
         showContacts();
     }
 }
 
-function saveContactToLocalStorage(ind) {
-    localStorage.setItem('contact#'+ind, JSON.stringify(contacts[ind]));
+function saveContactsToLocalStorage() {
+    localStorage.contacts = JSON.stringify(contacts);
 }
 
 function loadContactsFromLocalStorage() {
-    var contact_count;
-    if (localStorage.contactCount) {
-        contact_count = Number(localStorage.contactCount);
-        var i = 0;
-        while (i < contact_count) {
-            contacts.push(JSON.parse(localStorage.getItem('contact#'+i)));
-            i++;
-        }
+    if (localStorage.contacts) {
+        contacts = JSON.parse(localStorage.contacts);
         showContacts();
     }
 }
