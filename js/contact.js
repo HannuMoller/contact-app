@@ -29,6 +29,12 @@ function saveContact() {
     saveContactsToLocalStorage();
 
     showContacts();
+
+    $('#first_name').val('');
+    $('#last_name').val('');
+    $('#address').val('');
+    $('#phone').val('');
+    $('#city').val('');
 }
 
 function showContacts() {
