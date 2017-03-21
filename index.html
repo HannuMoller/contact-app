@@ -6,11 +6,16 @@
     <title>Contact Management System</title>
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 
+    <script src="libs/lodash.min.js" type="text/javascript"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/contact-storage.js" type="text/javascript"></script>
     <script src="js/contact.js" type="text/javascript"></script>
 
     </head>
-<body onload="loadContactsFromLocalStorage()">
+<body onload="loadContacts()">
 <div id="new_contact">
     <h3 id="formheader">New Contact</h3>
     <hr/>

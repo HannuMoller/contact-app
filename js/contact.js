@@ -26,8 +26,7 @@ function saveContact() {
         $('#save').html('Add Contact');
         $('#formheader').html('New Contact');
     }
-    saveContactsToLocalStorage();
-
+    contactsApp.storage.saveContacts(contacts);
     showContacts();
 
     $('#first_name').val('');
@@ -83,18 +82,12 @@ function deleteContact(ind) {
 
     if (confirm('Ok to remove '+contact.firstName+' '+contact.lastName+' ?')) {
         contacts.splice(ind, 1);
-        saveContactsToLocalStorage();
+        contactsApp.storage.saveContacts(contacts);
         showContacts();
     }
 }
 
-function saveContactsToLocalStorage() {
-    localStorage.contacts = JSON.stringify(contacts);
-}
-
-function loadContactsFromLocalStorage() {
-    if (localStorage.contacts) {
-        contacts = JSON.parse(localStorage.contacts);
-        showContacts();
-    }
+function loadContacts() {
+    contacts = contactsApp.storage.loadContacts();
+    showContacts();
 }
